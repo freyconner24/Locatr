@@ -1,0 +1,62 @@
+var Project = React.createClass({displayName: "Project",
+    mixins: [ParseReact.Mixin],
+    observe: function() {
+        return {
+            locatns: (new Parse.Query('Locatn')
+            .equalTo('user', Parse.User.current())
+            .include('user')
+            .ascending('createdAt'))
+        };
+    },
+    render: function() {
+        if (this.data.locatns[0] !== undefined) {
+            var locatnArray = new Array();
+            var threeLocatns = new Array();
+            for(var i = 0; i < this.data.locatns.length; ++i) {
+                for(var j = 0; j < 3; ++j) {
+                    this.data.locatns[j].number = "conner";
+                    threeLocatns.push(this.data.locatns[j]);
+                    ++i;
+                }
+                locatnArray.push(threeLocatns);
+                threeLocatns = [];
+            }
+
+            console.log(locatnArray);
+            return (
+                React.createElement("div", {className: "projectInfo"}, 
+                    locatnArray.map(function(locatnThree) {
+                        return React.createElement(ProjectLocatnRow, {locatnThree: locatnThree})
+                    })
+                )
+            );
+        } else {
+            return (
+                React.createElement("div", {className: "projectInfo"})
+            );
+        }
+
+
+        
+    },
+    componentDidMount: function() {
+        this.resizeProjectLocatns();
+        $(window).on('resize', this.resizeProjectLocatns);
+    },
+
+    resizeProjectLocatns: function () {
+        var height = $('.projectPicCont').width() / 1.5;
+        $('.projectInfo .locatnPic').height(height);
+    }
+});
+
+React.render(React.createElement(Project, null), document.getElementById('project'));
+//{this.data.locatn.title}
+//{this.data.locatn.description}
+//style={divStyle} //in locationPic
+//<ProfileTag locatn={this.props.locatn[0]}/>
+
+//pass the three locations after breaking them up in the render function
+
+
+

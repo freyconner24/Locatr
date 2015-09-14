@@ -1,0 +1,25 @@
+body {
+  background-color: #2e5f3e;
+}
+
+.loginBox {
+  background-color: #4fa46b;
+  padding: 20px;
+  width: 800px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+
+.btn {
+  margin-right: 15px;
+}
+
+.textCenter {
+	text-align: center;
+}
+
+.white {
+	color: white;
+}

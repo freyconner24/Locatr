@@ -1,0 +1,202 @@
+.lato {
+  font-family: 'Lato', sans-serif;
+}
+.jose {
+  font-family: 'Josefin Sans', sans-serif;
+}
+.textBI {
+  font-weight: 700;
+  font-style: italic;
+}
+.fontThin {
+  font-weight: 100;
+}
+.textCenter {
+  text-align: center;
+}
+.centerBlock {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.floatR {
+  float: right;
+}
+.floatL {
+  float: left;
+}
+.shadow {
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 5px 41px rgba(0, 0, 0, 0.3) inset;
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 5px 41px rgba(0, 0, 0, 0.3) inset;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 5px 41px rgba(0, 0, 0, 0.3) inset;
+}
+.shadowAllSides {
+  -webkit-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
+}
+.shadowInner {
+  -webkit-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 13px rgba(0, 0, 0, 0.5) inset;
+  -moz-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 13px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 13px rgba(0, 0, 0, 0.5) inset;
+}
+.shadowBoth {
+  -webkit-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 135px rgba(0, 0, 0, 0.6) inset;
+  -moz-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 135px rgba(0, 0, 0, 0.6) inset;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 135px rgba(0, 0, 0, 0.6) inset;
+}
+.shadowOnlyInner {
+  -webkit-box-shadow: 0 0 0px rgba(0, 0, 0, 0.4), 0 0 13px rgba(0, 0, 0, 0.4) inset;
+  -moz-box-shadow: 0 0 0px rgba(0, 0, 0, 0.4), 0 0 13px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.4), 0 0 13px rgba(0, 0, 0, 0.4) inset;
+}
+.backButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 52px;
+  height: 36px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  text-align: center;
+  padding-top: 7px;
+  padding-right: 4px;
+}
+.backButton:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.deleteButton {
+  width: 61px;
+  height: 36px;
+  background-color: rgba(135, 0, 0, 0.5);
+  font-size: 14px;
+  text-align: center;
+  padding-top: 7px;
+  padding-left: 4px;
+}
+.deleteButton:hover {
+  background-color: rgba(135, 0, 0, 0.3);
+  cursor: pointer;
+}
+.editText {
+  cursor: pointer;
+}
+.noScroll {
+  overflow: hidden;
+}
+.updatedMessage {
+  text-align: center;
+  font-style: italic;
+  font-weight: 700;
+  margin-top: 8px;
+  display: none;
+}
+#project {
+  display: none;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  z-index: 10000;
+}
+.projectInfo {
+  padding-top: 15px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  background-color: #777777;
+  color: white;
+  height: 100%;
+}
+.projectInfo #projectBackButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 52px;
+  height: 36px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  text-align: center;
+  padding-top: 7px;
+  padding-right: 4px;
+  border-radius: 0 0 15px 0;
+}
+.projectInfo #projectBackButton:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.projectInfo .projectTitle {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+}
+.projectInfo .projectDesc {
+  text-align: center;
+  margin-bottom: 20px;
+  font-style: italic;
+  font-size: 1.22em;
+}
+.projectInfo .locatnsRow {
+  opacity: 0;
+  width: 100%;
+}
+.projectInfo .locatnsRow .locatnPic {
+  -webkit-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
+  height: 200px;
+  width: 100%;
+  border-radius: 15px;
+  background-image: url("/build/img/locatn.jpg");
+  background-size: auto 100%;
+  background-position: center;
+}
+.projectInfo .locatnsRow .locatnPic .number {
+  color: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 52px;
+  height: 36px;
+  border-radius: 0px 15px 0px 15px;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+  text-align: center;
+  padding-top: 5px;
+  margin-right: 15px;
+}
+.projectInfo .locatnsRow .locatnPic:hover {
+  -webkit-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 135px rgba(0, 0, 0, 0.6) inset;
+  -moz-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 135px rgba(0, 0, 0, 0.6) inset;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 135px rgba(0, 0, 0, 0.6) inset;
+  cursor: pointer;
+}
+.projectInfo .locatnsRow .tagRow .tag {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  display: inline;
+  height: 30px;
+  width: 100%;
+  background-color: #dddddd;
+  -webkit-border-radius: 9999px;
+  -moz-border-radius: 9999px;
+  border-radius: 9999px;
+  padding-top: 7px;
+  padding-bottom: 3px;
+  padding-right: 13px;
+  padding-left: 13px;
+  margin-right: 10px;
+}
+.projectInfo .locatnsRow .locatnText {
+  padding: 15px;
+}
+.projectInfo .locatnsRow .locatnText .locatnTitle {
+  font-size: 22px;
+  text-align: center;
+}
+.projectInfo .locatnsRow .locatnText .locatnDesc {
+  font-size: 15px;
+  font-style: italic;
+  text-indent: 20px;
+}

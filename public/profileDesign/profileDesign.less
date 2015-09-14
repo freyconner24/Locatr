@@ -1,0 +1,170 @@
+@myDarkGray:#555;
+@myBlack:#222;
+@myLightGray:#ddd;
+
+.lato {font-family: 'Lato', sans-serif;}
+.jose {font-family: 'Josefin Sans', sans-serif;}
+.textBI {font-weight: 700; font-style: italic;}
+.fontThin {font-weight: 100;}
+@defaultRadius:9999px;
+.round(@radius:@defaultRadius) {
+    -webkit-border-radius:@radius;
+       -moz-border-radius:@radius;
+            border-radius:@radius;   
+}
+
+.blur(@level) {
+		filter: blur(@level);
+		-webkit-filter: blur(@level);
+		-moz-filter: blur(@level);
+		-o-filter: blur(@level);
+		-ms-filter: blur(@level);
+}
+
+.border6 {border:6px solid white;}
+
+.textCenter {text-align: center;}
+.centerBlock {display: block; margin-right: auto; margin-left: auto;}
+
+.floatR {float: right;}
+.floatL {float: left;}
+
+.appCont {background-color: white; position: relative; width: 100%; background-color: @myLightGray;}
+
+.profImg {background-image: url("derek.jpg"); background-size: cover; background-position: center;}
+.locatnImg {background-image: url("locatn.jpg"); background-size: cover; background-position: center;}
+
+.appCont {
+	
+}
+
+.profileHeaderCont {
+	width: 100%; height: 400px;
+	position: relative;
+	overflow: hidden;
+	
+	.coverPhoto {
+		.profImg;
+		height: 100%;
+		.blur(12px);
+		margin: -15px -15px -15px -15px;
+	}
+
+	.picNameCont {
+		position: absolute;
+		top: 50%; left: 50%;
+		transform: translate(-50%, -50%);
+
+		.profilePic {
+			.round;
+			background-color: @myDarkGray;
+			height: 200px;
+			width: 200px;
+			.centerBlock;
+			.border6;
+			.profImg;
+			margin-bottom: 22px;
+		}
+
+		.name {
+			.fontThin;
+			.lato;
+			.textCenter;
+			font-size: 36px;
+			color: white;
+		}
+	}
+}
+
+.whiteBlock {
+	background-color: white;
+	height: 20px;
+	width: 100%;
+	margin-top: -20px;
+	position: absolute;
+}
+
+.profileTitle {
+	.textCenter;
+	.jose;
+	.textBI;
+	padding-top: 22px;
+	padding-bottom: 9px;
+	font-size: 30px;
+
+
+}
+
+.editText {
+	font-weight: 300;
+	font-size: 22px;
+	font-style: italic;
+}
+
+.locatnRow {
+	.round;
+	background-color: @myDarkGray;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 12px;
+
+	.locatnPic {
+		.round;
+		.border6;
+		background-color: @myBlack;
+		.floatL;
+		.locatnImg;
+		width: 121px;
+		height: 121px;
+		margin-right: 15px;
+	}
+
+	.locatnText {
+		.fontThin;
+		.lato;
+		color: white;
+		width: 100%;
+		margin-bottom: 8px;
+		margin-left: -50px;
+
+		.locatnTitle {
+			font-size: 28px;
+		}
+
+		.locatnDesc {
+			font-size: 18px;
+			font-style: italic;
+		}
+	}
+
+	.arrowButton {
+		.round;
+		float: right;
+		margin-top: -63px;
+		background-color: white;
+		height: 50px;
+		width: 50px;
+	}
+
+	.tagRow {		
+		.tag {
+			.jose;
+			.textBI;
+			display: inline;
+			height: 30px;
+			width: 100%;
+			background-color: @myLightGray;
+			.round;
+			padding-top: 7px; padding-bottom: 3px; padding-right: 13px; padding-left: 13px;
+			margin-right: 10px;
+		}
+	}
+}
+
+.sectionCont {
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 20px;
+}
+
+

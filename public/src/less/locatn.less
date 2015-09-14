@@ -1,0 +1,93 @@
+@import "global.less";
+
+#locatn {
+	display: none;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	height: 100%;
+	z-index: 10000;
+	overflow: scroll;
+}
+
+.locatnInfo {
+	padding-top: 15px;
+	.lato;
+	.fontThin;
+	background-color: @myDarkGray;
+	color: white;
+	height: 100%;
+
+	.mapPicCont {
+		opacity: 0;
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+
+		.locatnPic {
+			.shadowAllSides;
+			height: 500px;
+			width: 100%;
+			border-radius: 15px;
+
+			background-image: url("/build/img/locatn.jpg"); 
+			background-size: auto 100%; 
+			background-position: center;
+
+			.number {
+				color: black;
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 52px;
+				height: 36px;
+				border-radius: 0px 15px 0px 15px;
+				background-color: rgba(255, 255, 255, 0.6);
+				font-size: 18px;
+				.textCenter;
+				padding-top: 5px;
+				margin-right: 15px;
+			}
+
+			#locatnBackButton {
+				.backButton;
+				border-radius: 15px 0 15px 0;
+				margin-left: 15px;
+			}
+		}
+
+		.map {
+			background-color: @myLightGray;
+			border-radius: 15px;
+		}
+
+		.tagRow {
+			color: #333;
+			margin-top: 20px;
+			.tag {
+				.jose;
+				.textBI;
+				float: left;
+				margin-bottom: 10px;
+				height: 30px;
+				background-color: @myLightGray;
+				.round;
+				padding-top: 7px; padding-bottom: 3px; padding-right: 13px; padding-left: 13px;
+				margin-right: 10px;
+			}
+		}
+	}
+
+	.locatnText {
+		padding: 15px;
+		
+		.locatnTitle {
+			font-size: 28px;
+		}
+		.locatnDesc {
+			font-size: 18px;
+			font-style: italic;
+		}
+	}
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="logsignin.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+  <script src="http://fb.me/react-0.13.3.js"></script>
+  <script src="https://www.parsecdn.com/js/parse-latest.js"></script>
+  <script src="https://www.parsecdn.com/js/parse-react.js"></script>
+  
+  <title>Login/Sign Up Page</title>
+</head>
+<body>
+  <form>
+    <div class="loginBackground">
+      <div class="loginBox">
+        <div class="form-group">
+          <label for="fullname">Full name</label>
+          <input type="text" class="form-control" id="fullname" placeholder="Full name">
+        </div>
+        <div class="form-group">
+          <label for="username">User name</label>
+          <input type="text" class="form-control" id="username" placeholder="User name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Email">
+        </div>
+        <div class="form-group">  
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password">
+        </div>
+          <button type="button" id='login' class="btn btn-default pull-left" onclick="loginUser()">Log in</button>
+          <button type="button" id='signup' class="btn btn-default pull-left" onclick="signupUser()">Sign up</button>
+          <button type="button" id='logout' class="btn btn-default pull-left" onclick="logoutUser()">Log out</button>
+          <a href="../post/post_new.html">View Posts</a>
+      </div>
+    </div>
+  </form>
+
+  <script type="text/javascript">
+    Parse.initialize("GCJdrm8az1lcB3je08LYL5KPdA0oXa8D9PeXZ1As", "KBljyMk0thShw2NV6dxOhdido1nlZPOuFhqkUA4H");
+    function loginUser() {
+      var username = $('#username').val();
+      var password = $('#password').val();
+      
+      Parse.User.logIn(username, password, {
+        success: function(user) {
+          console.log("You have successfully logged in");
+        },
+        error: function(user, error) {
+          alert("Error: " + error.code + " " + error.message);
+        }
+      });
+    }
+
+    function signupUser() {
+      var regex = /(\w+)\s*(\w+)/;
+      var fullname = $('#fullname').val();
+      var match = regex.exec(fullname);
+      var first = match[1];
+      var last = match[2];
+      var username = $('#username').val();
+      var password = $('#password').val();
+      var email = $('#email').val();
+
+      var user = new Parse.User();
+      user.set("username", username);
+      user.set("password", password);
+      user.set("email", email);
+      user.set("first", first);
+      user.set("last", last);
+      user.set("phone", "415-392-0202");
+
+      user.signUp(null, {
+        success: function(user) {
+          console.log("You have successfully signed up");
+        },
+        error: function(user, error) {
+          alert("Error: " + error.code + " " + error.message);
+        }
+      });
+    }
+
+    function logoutUser() {
+      if(Parse.User.current()) {
+        console.log("There is a user to logout");
+        Parse.User.logOut();
+        if(Parse.User.current() === null) {
+          console.log("User has been logged out");
+        } else {
+          console.log("The user has not been logged out");
+        }
+      } else {
+        console.log("There is no user to logout");
+      }
+    }
+  </script>
+</body>
+</html>

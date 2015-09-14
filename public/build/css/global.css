@@ -1,0 +1,94 @@
+.lato {
+  font-family: 'Lato', sans-serif;
+}
+.jose {
+  font-family: 'Josefin Sans', sans-serif;
+}
+.textBI {
+  font-weight: 700;
+  font-style: italic;
+}
+.fontThin {
+  font-weight: 100;
+}
+.textCenter {
+  text-align: center;
+}
+.centerBlock {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.floatR {
+  float: right;
+}
+.floatL {
+  float: left;
+}
+.shadow {
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 5px 41px rgba(0, 0, 0, 0.3) inset;
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 5px 41px rgba(0, 0, 0, 0.3) inset;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 5px 41px rgba(0, 0, 0, 0.3) inset;
+}
+.shadowAllSides {
+  -webkit-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
+}
+.shadowInner {
+  -webkit-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 13px rgba(0, 0, 0, 0.5) inset;
+  -moz-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 13px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 13px rgba(0, 0, 0, 0.5) inset;
+}
+.shadowBoth {
+  -webkit-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 135px rgba(0, 0, 0, 0.6) inset;
+  -moz-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 135px rgba(0, 0, 0, 0.6) inset;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 135px rgba(0, 0, 0, 0.6) inset;
+}
+.shadowOnlyInner {
+  -webkit-box-shadow: 0 0 0px rgba(0, 0, 0, 0.4), 0 0 13px rgba(0, 0, 0, 0.4) inset;
+  -moz-box-shadow: 0 0 0px rgba(0, 0, 0, 0.4), 0 0 13px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.4), 0 0 13px rgba(0, 0, 0, 0.4) inset;
+}
+.backButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 52px;
+  height: 36px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  text-align: center;
+  padding-top: 7px;
+  padding-right: 4px;
+}
+.backButton:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.deleteButton {
+  width: 61px;
+  height: 36px;
+  background-color: rgba(135, 0, 0, 0.5);
+  font-size: 14px;
+  text-align: center;
+  padding-top: 7px;
+  padding-left: 4px;
+}
+.deleteButton:hover {
+  background-color: rgba(135, 0, 0, 0.3);
+  cursor: pointer;
+}
+.editText {
+  cursor: pointer;
+}
+.noScroll {
+  overflow: hidden;
+}
+.updatedMessage {
+  text-align: center;
+  font-style: italic;
+  font-weight: 700;
+  margin-top: 8px;
+  display: none;
+}

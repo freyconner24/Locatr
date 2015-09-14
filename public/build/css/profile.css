@@ -1,0 +1,274 @@
+.lato {
+  font-family: 'Lato', sans-serif;
+}
+.jose {
+  font-family: 'Josefin Sans', sans-serif;
+}
+.textBI {
+  font-weight: 700;
+  font-style: italic;
+}
+.fontThin {
+  font-weight: 100;
+}
+.textCenter {
+  text-align: center;
+}
+.centerBlock {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.floatR {
+  float: right;
+}
+.floatL {
+  float: left;
+}
+.shadow {
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 5px 41px rgba(0, 0, 0, 0.3) inset;
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 5px 41px rgba(0, 0, 0, 0.3) inset;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 5px 41px rgba(0, 0, 0, 0.3) inset;
+}
+.shadowAllSides {
+  -webkit-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
+}
+.shadowInner {
+  -webkit-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 13px rgba(0, 0, 0, 0.5) inset;
+  -moz-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 13px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 13px rgba(0, 0, 0, 0.5) inset;
+}
+.shadowBoth {
+  -webkit-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 135px rgba(0, 0, 0, 0.6) inset;
+  -moz-box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 135px rgba(0, 0, 0, 0.6) inset;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.5), 0 0 135px rgba(0, 0, 0, 0.6) inset;
+}
+.shadowOnlyInner {
+  -webkit-box-shadow: 0 0 0px rgba(0, 0, 0, 0.4), 0 0 13px rgba(0, 0, 0, 0.4) inset;
+  -moz-box-shadow: 0 0 0px rgba(0, 0, 0, 0.4), 0 0 13px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.4), 0 0 13px rgba(0, 0, 0, 0.4) inset;
+}
+.backButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 52px;
+  height: 36px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  text-align: center;
+  padding-top: 7px;
+  padding-right: 4px;
+}
+.backButton:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.deleteButton {
+  width: 61px;
+  height: 36px;
+  background-color: rgba(135, 0, 0, 0.5);
+  font-size: 14px;
+  text-align: center;
+  padding-top: 7px;
+  padding-left: 4px;
+}
+.deleteButton:hover {
+  background-color: rgba(135, 0, 0, 0.3);
+  cursor: pointer;
+}
+.editText {
+  cursor: pointer;
+}
+.noScroll {
+  overflow: hidden;
+}
+.updatedMessage {
+  text-align: center;
+  font-style: italic;
+  font-weight: 700;
+  margin-top: 8px;
+  display: none;
+}
+.border6 {
+  border: 6px solid white;
+}
+.profileCont {
+  background-color: white;
+  position: relative;
+  width: 100%;
+  background-color: #dddddd;
+}
+.profImg {
+  background-image: url("/build/img/derek.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.locatnImg {
+  background-image: url("/build/img/locatn.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.logCont {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  top: 10px;
+  right: 10px;
+  z-index: 4000;
+  position: absolute;
+}
+.logCont .login,
+.logCont .logout {
+  cursor: pointer;
+  float: right;
+  margin-left: 25px;
+  margin-right: 10px;
+  color: white;
+}
+.profileHeaderCont {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+.profileHeaderCont .coverPhoto {
+  background-image: url("/build/img/derek.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  filter: blur(12px);
+  -webkit-filter: blur(12px);
+  -moz-filter: blur(12px);
+  -o-filter: blur(12px);
+  -ms-filter: blur(12px);
+  margin: -15px -15px -15px -15px;
+}
+.profileHeaderCont .picNameCont {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.profileHeaderCont .picNameCont .profilePic {
+  -webkit-border-radius: 9999px;
+  -moz-border-radius: 9999px;
+  border-radius: 9999px;
+  background-color: #777777;
+  height: 200px;
+  width: 200px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  border: 6px solid white;
+  background-image: url("/build/img/derek.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 22px;
+}
+.profileHeaderCont .picNameCont .name {
+  font-weight: 100;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  font-size: 36px;
+  color: white;
+}
+.whiteBlock {
+  background-color: white;
+  height: 20px;
+  width: 100%;
+  margin-top: -20px;
+  position: absolute;
+}
+.profileTitle {
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  padding-top: 22px;
+  padding-bottom: 9px;
+  font-size: 30px;
+}
+.editText {
+  font-weight: 300;
+  font-size: 22px;
+  font-style: italic;
+}
+.locatnRow {
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 5px 41px rgba(0, 0, 0, 0.3) inset;
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 5px 41px rgba(0, 0, 0, 0.3) inset;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 5px 41px rgba(0, 0, 0, 0.3) inset;
+  -webkit-border-radius: 9999px;
+  -moz-border-radius: 9999px;
+  border-radius: 9999px;
+  background-color: #777777;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+.locatnRow .locatnPic {
+  -webkit-border-radius: 9999px;
+  -moz-border-radius: 9999px;
+  border-radius: 9999px;
+  border: 6px solid white;
+  background-color: #222222;
+  float: left;
+  background-image: url("/build/img/locatn.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 121px;
+  height: 121px;
+  margin-right: 15px;
+}
+.locatnRow .locatnText {
+  font-weight: 100;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  width: 100%;
+  margin-bottom: 8px;
+  margin-left: -50px;
+}
+.locatnRow .locatnText .locatnTitle {
+  font-size: 28px;
+}
+.locatnRow .locatnText .locatnDesc {
+  font-size: 18px;
+  font-style: italic;
+}
+.locatnRow .arrowButton {
+  -webkit-border-radius: 9999px;
+  -moz-border-radius: 9999px;
+  border-radius: 9999px;
+  float: right;
+  margin-top: -63px;
+  background-color: white;
+  height: 50px;
+  width: 50px;
+}
+.locatnRow .tagRow .tag {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  display: inline;
+  height: 30px;
+  width: 100%;
+  background-color: #dddddd;
+  -webkit-border-radius: 9999px;
+  -moz-border-radius: 9999px;
+  border-radius: 9999px;
+  padding-top: 7px;
+  padding-bottom: 3px;
+  padding-right: 13px;
+  padding-left: 13px;
+  margin-right: 10px;
+}
+.locatnRow:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+.sectionCont {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="locatns.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+  <script src="http://fb.me/react-0.13.3.js"></script>
+  <script src="https://www.parsecdn.com/js/parse-latest.js"></script>
+  <script src="https://www.parsecdn.com/js/parse-react.js"></script>
+  
+  <title>Create Comment</title>
+</head>
+<body style='background-color: #2e5f3e'>
+  <div class="loginBox white">
+    <div id='locatnContainer'>Locatns</div>
+  </div>
+
+
+
+<!--  **************************************************** -->
+
+<script type="text/jsx">
+  var Locatn = React.createClass({
+    addTags: function(event) {
+      //console.log(event);
+      var Tag = Parse.Object.extend("Tag");
+      var tag = new Tag();
+
+      var Locatn = Parse.Object.extend("Locatn");
+      var locatnId = this.props.locatn.id.objectId;
+      tag.set("locatn", new Locatn({id: locatnId}));
+      tag.set("text", $('.' + locatnId).val());
+      console.log("tag text: " + $('.' + locatnId).val());
+
+      tag.save(null, {
+        success: function(tag) {
+          console.log('New tag created with objectId: ' + tag.id);
+        },
+        error: function(tag, error) {
+          console.log('Failed to create new tag, with error code: ' + error.message);
+        }
+      });
+
+    },
+    render: function() {
+      console.log(this.props.locatn);
+      var imageFile = this.props.locatn.picture;
+      var imageURL = imageFile.url();
+      var classesInput = "form-control tagsInput " + this.props.locatn.id.objectId;
+      return (
+        <div className='locatn'>
+          <h3 className='textCenter title'>{this.props.locatn.title}</h3>
+          <img className='locatnPic img-responsive locatnPicDOM' alt="Responsive image" src={imageURL}></img>
+          <h4>{this.props.locatn.description}</h4>
+          <div className="input-group">
+            <input type="text" className={classesInput} placeholder="Tags..."></input>
+            <span className="input-group-btn">
+              <button className="btn btn-default" type="button" onClick={this.addTags}>Tag Locatn</button>
+            </span>
+          </div>
+        </div>
+      );
+    }
+  });
+
+</script>
+
+<script type="text/jsx">
+  var LocatnBlock = React.createClass({
+    mixins: [ParseReact.Mixin],
+
+    observe: function() {
+      return {
+        locatns: (new Parse.Query('Locatn')
+          .equalTo('user', Parse.User.current())
+          .include('user')
+          .ascending('createdAt'))
+      };
+    },
+
+    render: function() {
+      return (
+        <div className="locatnBlock">
+          {this.data.locatns.map(function(locatn) {
+            return <Locatn locatn={locatn} key={locatn.id}/>
+          })}
+        </div>
+      );
+    }
+  });
+
+  React.render(<LocatnBlock />, document.getElementById("locatnContainer"));
+</script>
+
+<script type="text/javascript">
+    Parse.initialize("GCJdrm8az1lcB3je08LYL5KPdA0oXa8D9PeXZ1As", "KBljyMk0thShw2NV6dxOhdido1nlZPOuFhqkUA4H");
+  </script>
+</body>
+</html>

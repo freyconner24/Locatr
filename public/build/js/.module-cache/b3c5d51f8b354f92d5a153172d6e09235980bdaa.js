@@ -1,0 +1,16 @@
+var ProfileHeader = React.createClass({displayName: "ProfileHeader",
+  render: function() {
+    return (
+        React.createElement("div", null, 
+            React.createElement("div", {className: "profileHeaderCont"}, 
+                React.createElement("div", {className: "coverPhoto"}), 
+                React.createElement("div", {className: "picNameCont"}, 
+                    React.createElement("div", {className: "profilePic"}), 
+                    React.createElement("div", {className: "name"}, "Derek Truong")
+                )
+            ), 
+            React.createElement("div", {className: "whiteBlock"})
+        )
+    );
+  }
+});

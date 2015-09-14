@@ -1,0 +1,50 @@
+var Locatn = React.createClass({displayName: "Locatn",
+    mixins: [ParseReact.Mixin],
+    observe: function() {
+        return {
+            locatn: (new Parse.Query('Locatn')
+            .equalTo('user', Parse.User.current())
+            .include('user')
+            .ascending('createdAt')
+            .limit(1))
+        };
+    },
+    render: function() {
+        var imageFile = this.data.locatn.picture;
+        var imageURL = imageFile.url();
+        
+        var divStyle = {
+            backgroundImage: 'url(' + imageURL + ')'
+        };
+        return (
+            React.createElement("div", {className: "locatn"}, 
+                React.createElement("div", {className: "row mapPicCont"}, 
+                    React.createElement("div", {className: "col-md-8"}, 
+                        React.createElement("div", {className: "locatnPic", style: divStyle}, 
+                            React.createElement("div", {className: "number"})
+                        )
+                    ), 
+                    React.createElement("div", {className: "col-md-4"}, 
+                        React.createElement("div", {className: "map"}
+                        
+                        )
+                    )
+                ), 
+                React.createElement("div", {className: "locatnTitle"}, this.data.locatn.title, "  ", React.createElement("span", {className: "editText"}, "edit")), 
+                React.createElement("div", {className: "locatnDesc"}, this.data.locatn.description), 
+                React.createElement(ProfileTag, null)
+            )
+        );
+    },
+    componentDidMount: function() {
+        this.resizePhotos();
+        $(window).on('resize', this.resizePhotos);
+    },
+
+    resizePhotos: function () {
+        var width = $('.col-md-4').width();
+        $('.map').height(width);
+    }
+});
+
+React.render(React.createElement(Locatn, null), document.getElementById('locatn'));
