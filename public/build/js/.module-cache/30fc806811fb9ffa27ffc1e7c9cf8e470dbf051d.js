@@ -1,6 +1,6 @@
 var Projects = React.createClass({displayName: "Projects",
     mixins: [ParseReact.Mixin],
-    observe: function() {
+	observe: function() {
         return {
             projects: (new Parse.Query('Project')
             .equalTo('user', Parse.User.current())
@@ -9,18 +9,15 @@ var Projects = React.createClass({displayName: "Projects",
     },
     render: function() {
         console.log(this.data.projects);
-        return (
-            React.createElement("div", {className: "sectionCont row"}, 
-                React.createElement("div", {className: "profileTitle row"}, "PROJECT ", React.createElement("span", {id: "newProjectBtn", onClick: this.showNewProject}, "new")), 
+		return (
+			React.createElement("div", {className: "sectionCont row"}, 
+				React.createElement("div", {className: "profileTitle row"}, "PROJECT"), 
                 this.data.projects.map(function(project) {
-                    return React.createElement("div", {onClick: this.showProject.bind(this, project.id), key: project.id}, React.createElement(ProjectRow, {project: project}))
+				    return React.createElement("div", {onClick: this.showProject.bind(this, project.id), key: project.id}, React.createElement(ProjectRow, {project: project}))
                 }, this)
             )
-        );
-    },
-    showNewProject: function() {
-        
-    },
+		);
+	},
     showProject: function(projectId) {
         var Project = Parse.Object.extend("Project");
         var query = new Parse.Query(Project);
@@ -35,7 +32,7 @@ var Projects = React.createClass({displayName: "Projects",
             },
             error: function(object, error) {
                 console.log("Error");
-
+                
             }
         });
     }

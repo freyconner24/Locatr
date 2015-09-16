@@ -9,7 +9,7 @@ var ProfileApp = React.createClass({
         };
     },
     render: function() {
-    	console.log("ProjectApp.js: " + this.data.locatns);
+        console.log("ProjectApp.js: " + this.data.locatns);
         return (
             <div className='profileAppCont'>
                 <Profile locatns={this.data.locatns}/>

@@ -6,7 +6,7 @@ var EditLocatnModal = React.createClass({
         var description = "This Is A Description";
         var imageFile = null;
         var imageURL = "/build/img/locatn.jpg";
-        
+
         var divStyle = {
             backgroundImage: 'url(' + imageURL + ')'
         };
@@ -101,11 +101,11 @@ var EditLocatnModal = React.createClass({
             alert("error");
             // The delete failed.
             // error is a Parse.Error with an error code and message.
-    } 
+    }
 });
     }
 });
 
 function renderEditLocatnModal(locatn) {
-    React.render(<EditLocatnModal locatn={locatn}/>, document.getElementById('editLocatnModal'));    
+    React.render(<EditLocatnModal locatn={locatn}/>, document.getElementById('editLocatnModal'));
 }

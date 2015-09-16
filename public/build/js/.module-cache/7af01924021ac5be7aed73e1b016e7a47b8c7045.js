@@ -19,7 +19,37 @@ var Projects = React.createClass({displayName: "Projects",
         );
     },
     showNewProject: function() {
-        
+        var Project = Parse.Object.extend("Project");
+        var project = new Project();
+
+        project.set("user", Parse.User.current());
+        project.set("title", title);
+        project.set("description", description);
+
+        var ProjectAndLocatn = Parse.Object.extend("ProjectAndLocatn");
+
+        project.save(null, {
+            success: function(project) {
+                console.log('New PROJECT created with objectId: ' + project.id);
+                for(var i = 0; i < checkBox.count; ++i) {
+                    var projAndLoc = new ProjectAndLocatn();
+                    projAndLoc.set("project", project);
+                    projAndLoc.set("locatn", locatn);
+
+                    projAndLoc.save(null, {
+                        success: function(projAndLoc) {
+                            console.log('New PROJECT_AND_LOC created with objectId: ' + project.id);
+                        },
+                        error: function(projAndLoc, error) {
+
+                        }
+                    });
+                }
+            },
+            error: function(project, error) {
+                alert('Failed to create new object, with error code: ' + error.message);
+            }
+        });
     },
     showProject: function(projectId) {
         var Project = Parse.Object.extend("Project");

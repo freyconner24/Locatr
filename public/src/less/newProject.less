@@ -1,0 +1,82 @@
+@import "global.less";
+
+#newProjectBtn {
+    .lato;
+    cursor: pointer;
+}
+
+.newProjectCont {
+    width: 700px;
+    padding: 15px;
+    .lato;
+    .fontThin;
+    color: white;
+    background-color: @myDarkGray;
+    top: 0;
+    margin: 2% auto;
+    left: 0;
+    right: 0;
+    border-radius: 24px;
+    .shadowAllSides;
+
+    .newProjectText {
+        padding: 15px;
+        .textCenter;
+
+        .newProjectTitle {
+            font-size: 28px;
+        }
+        .newProjectDesc {
+            font-size: 18px;
+            font-style: italic;
+        }
+    }
+
+    .newProjectButtons {
+        .textCenter;
+        cursor: pointer;
+        margin-top: 5px;
+
+        .cancelButton {
+            display: inline-block;
+            margin-right: 30px;
+        }
+        .createButton {
+            display: inline-block;
+        }
+    }
+}
+
+#newProjectBackButton {
+    position: relative;
+    border-radius: 15px 0 15px 0;
+    float: left;
+}
+
+.editTextBox {
+    padding: 0 15px;
+    background-color: #555;
+    .shadowOnlyInner;
+    border: none;
+    .textCenter;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.editTitleTextBox {
+    height: 50px;
+    font-size: 28px;
+}
+
+.editDescTextBox {
+    font-style: italic;
+    height: 40px;
+    font-size: 18px;
+}
+
+.editTagTextBox {
+    height: 40px;
+    font-size: 18px;
+    text-align: left;
+}

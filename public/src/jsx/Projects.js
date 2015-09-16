@@ -1,6 +1,6 @@
 var Projects = React.createClass({
     mixins: [ParseReact.Mixin],
-	observe: function() {
+    observe: function() {
         return {
             projects: (new Parse.Query('Project')
             .equalTo('user', Parse.User.current())
@@ -9,15 +9,18 @@ var Projects = React.createClass({
     },
     render: function() {
         console.log(this.data.projects);
-		return (
-			<div className='sectionCont row'>
-				<div className='profileTitle row'>PROJECT</div>
+        return (
+            <div className='sectionCont row'>
+                <div className='profileTitle row'>PROJECT <span id='newProjectBtn' onClick={this.showNewProject}>new</span></div>
                 {this.data.projects.map(function(project) {
-				    return <div onClick={this.showProject.bind(this, project.id)} key={project.id}><ProjectRow project={project} /></div>
+                    return <div onClick={this.showProject.bind(this, project.id)} key={project.id}><ProjectRow project={project} /></div>
                 }, this)}
             </div>
-		);
-	},
+        );
+    },
+    showNewProject: function() {
+        
+    },
     showProject: function(projectId) {
         var Project = Parse.Object.extend("Project");
         var query = new Parse.Query(Project);
@@ -32,7 +35,7 @@ var Projects = React.createClass({
             },
             error: function(object, error) {
                 console.log("Error");
-                
+
             }
         });
     }
